@@ -23,9 +23,9 @@ export class VideoEntity {
   canBeDownloaded: boolean;
   @Column({ name: 'min_age_restriction' })
   minAgeRestriction: number;
-  @CreateDateColumn({ name: 'created_at', type: 'timestamp with time zone' })
+  @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;
-  @Column({ name: 'publication_date', type: 'timestamp with time zone' })
+  @Column({ name: 'publication_date' })
   publicationDate: Date;
   @Column({ type: 'jsonb' })
   availableResolutions: Resolutions[];
