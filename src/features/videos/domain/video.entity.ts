@@ -27,12 +27,7 @@ export class VideoEntity {
   createdAt: Date;
   @Column({ name: 'publication_date', type: 'timestamp with time zone' })
   publicationDate: Date;
-  @Column({
-    name: 'available_resolutions',
-    type: 'enum',
-    enum: Resolutions,
-    array: true,
-  })
+  @Column({ type: 'jsonb' })
   availableResolutions: Resolutions[];
 
   update(video: UpdateVideoInputModel): void {
