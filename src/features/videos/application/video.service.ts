@@ -27,6 +27,8 @@ export class VideoService {
   }
 
   async deleteVideo(id: number): Promise<void> {
+    const video = await this.videoRepository.findById(id);
+    if (!video) throw new NotFoundException();
     await this.videoRepository.delete(id);
   }
 }
