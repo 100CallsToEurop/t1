@@ -9,6 +9,7 @@ import {
   CreateVideoInputModel,
   UpdateVideoInputModel,
 } from '../api/models/input';
+import { addDays } from 'date-fns';
 
 @Entity('video')
 export class VideoEntity {
@@ -45,8 +46,8 @@ export class VideoEntity {
     _video.title = video.title;
     _video.author = video.author;
     _video.canBeDownloaded = true;
-    _video.minAgeRestriction = 18;
-    _video.publicationDate = new Date();
+    _video.minAgeRestriction = null;
+    _video.publicationDate = addDays(new Date(), 1);
     _video.availableResolutions = video.availableResolutions;
 
     return _video;

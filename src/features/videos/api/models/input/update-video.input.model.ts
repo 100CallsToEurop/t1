@@ -5,6 +5,7 @@ import {
   IsEnum,
   IsNotEmpty,
   IsNumber,
+  IsOptional,
   IsString,
   Max,
   MaxLength,
@@ -28,7 +29,7 @@ export class UpdateVideoInputModel {
   @IsNotEmpty()
   @IsBoolean()
   canBeDownloaded: true;
-  @IsNotEmpty()
+  @IsOptional()
   @IsNumber()
   @Min(1)
   @Max(18)
