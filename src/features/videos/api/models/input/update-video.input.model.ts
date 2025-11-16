@@ -3,6 +3,7 @@ import {
   IsBoolean,
   IsDate,
   IsEnum,
+  IsISO8601,
   IsNotEmpty,
   IsNumber,
   IsString,
@@ -36,6 +37,6 @@ export class UpdateVideoInputModel {
   minAgeRestriction: number | null;
   @IsNotEmpty()
   @IsDate()
-  @Transform(({ value }) => new Date(value))
+  @IsISO8601()
   publicationDate: Date;
 }

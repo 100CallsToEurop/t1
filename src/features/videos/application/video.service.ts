@@ -20,6 +20,7 @@ export class VideoService {
     id: number,
     updateVideo: UpdateVideoInputModel,
   ): Promise<void> {
+    console.log(updateVideo);
     const video = await this.videoRepository.findById(id);
     if (!video) throw new NotFoundException();
     video.update(updateVideo);
