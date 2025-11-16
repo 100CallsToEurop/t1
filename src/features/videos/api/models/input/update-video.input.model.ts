@@ -11,6 +11,7 @@ import {
   Min,
 } from 'class-validator';
 import { Resolutions } from '../../../domain/resolutions.enum';
+import { Transform } from 'class-transformer';
 
 export class UpdateVideoInputModel {
   @IsNotEmpty()
@@ -35,5 +36,6 @@ export class UpdateVideoInputModel {
   minAgeRestriction: number | null;
   @IsNotEmpty()
   @IsDate()
+  @Transform(({ value }) => new Date(value))
   publicationDate: Date;
 }
