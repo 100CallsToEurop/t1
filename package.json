@@ -26,6 +26,9 @@
     "migration:seed": "cross-env NODE_ENV=development yarn typeorm-seed migration:run"
   },
   "dependencies": {
+    "@modelcontextprotocol/inspector": "^0.17.2",
+    "@modelcontextprotocol/sdk": "^1.22.0",
+    "@nestjs-mcp/server": "^0.3.0",
     "@nestjs/common": "^11.1.8",
     "@nestjs/config": "^4.0.2",
     "@nestjs/core": "^11.1.8",
@@ -40,7 +43,8 @@
     "pg": "^8.16.3",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.2",
-    "typeorm": "^0.3.27"
+    "typeorm": "^0.3.27",
+    "zod": "^4.1.12"
   },
   "devDependencies": {
     "@nestjs/cli": "^11.0.10",

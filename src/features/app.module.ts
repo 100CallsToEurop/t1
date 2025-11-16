@@ -6,6 +6,8 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmConfigService } from '../core/config';
 import { APP_FILTER } from '@nestjs/core';
 import { AllExceptionsFilter } from '../core/common/exceptions';
+import { McpModule } from '@nestjs-mcp/server';
+import { MCPServerConfig } from '../core/config/mcp';
 
 @Module({
   imports: [
@@ -13,6 +15,7 @@ import { AllExceptionsFilter } from '../core/common/exceptions';
       isGlobal: true,
       envFilePath: `.${process.env.NODE_ENV}.env`,
     }),
+    McpModule.forRootAsync(MCPServerConfig()),
     TypeOrmModule.forRootAsync(TypeOrmConfigService()),
     TestingModule,
     VideosModule,
