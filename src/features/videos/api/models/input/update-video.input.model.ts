@@ -6,6 +6,7 @@ import {
   IsISO8601,
   IsNotEmpty,
   IsNumber,
+  IsOptional,
   IsString,
   Matches,
   Max,
@@ -24,20 +25,20 @@ export class UpdateVideoInputModel {
   @IsString()
   @MaxLength(20)
   author: string;
-  @IsNotEmpty()
+  @IsOptional()
   @IsArray()
   @IsEnum(Resolutions, { each: true })
-  availableResolutions: Resolutions[];
-  @IsNotEmpty()
+  availableResolutions?: Resolutions[];
+  @IsOptional()
   @IsBoolean()
-  canBeDownloaded: true;
-  @IsNotEmpty()
+  canBeDownloaded?: true;
+  @IsOptional()
   @IsNumber()
   @Min(1)
   @Max(18)
-  minAgeRestriction: number | null;
-  @IsNotEmpty()
+  minAgeRestriction?: number | null;
+  @IsOptional()
   // @IsDate()
   @Matches(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/)
-  publicationDate: Date;
+  publicationDate?: Date;
 }
