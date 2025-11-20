@@ -169,7 +169,7 @@ export class VideosMcp {
       content: [
         {
           type: 'text',
-          text: `Получено видео: ${JSON.stringify(result)}`,
+          text: `Получено видео: ${result}`,
         },
       ],
     };
@@ -196,7 +196,7 @@ export class VideosMcp {
       content: [
         {
           type: 'text',
-          text: `Получено видео: ${JSON.stringify(result)}`,
+          text: `Получено видео: ${result}`,
         },
       ],
     };
