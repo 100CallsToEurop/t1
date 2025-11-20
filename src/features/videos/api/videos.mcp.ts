@@ -6,12 +6,12 @@ import { CallToolResult } from '@modelcontextprotocol/sdk/types';
 export class VideosMcp {
   constructor(private readonly videoQueryRepository: VideoQueryRepository) {}
 
-  @Tool({ name: 'health_check' })
+  @Tool({ name: 'работоспособность сервера' })
   healthCheck(): CallToolResult {
     return { content: [{ type: 'text', text: 'OK' }] };
   }
 
-  @Tool({ name: 'get_all_count_videos' })
+  @Tool({ name: 'получить количество видео' })
   async getVideos(): Promise<CallToolResult> {
     const result = await this.videoQueryRepository.findAll();
     return {
