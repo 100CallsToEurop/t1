@@ -18,7 +18,7 @@ export class VideosMcp {
   }
 
   @Tool({
-    name: 'Создать видео',
+    name: 'create_video',
     description: 'Создает видео с названием, автором',
     paramsSchema: {
       title: z.string(),
@@ -63,7 +63,7 @@ export class VideosMcp {
   }
 
   @Tool({
-    name: 'Обновить видео по id',
+    name: 'update_video',
     description: 'обновляет видео по id и названию, автором',
     paramsSchema: {
       id: z.number(),
@@ -110,7 +110,7 @@ export class VideosMcp {
   }
 
   @Tool({
-    name: 'Удалить видео по id',
+    name: 'delete_video',
     description: 'удаляет видео по id',
     paramsSchema: {
       id: z.number(),
@@ -143,7 +143,7 @@ export class VideosMcp {
   }
 
   @Tool({
-    name: 'Получить видео по id',
+    name: 'get_video',
     description: 'Получает видео по id',
     paramsSchema: {
       id: z.number(),
@@ -176,7 +176,7 @@ export class VideosMcp {
   }
 
   @Tool({
-    name: 'Получить список видео',
+    name: 'get_list_videos',
     description: 'Получает все видео в БД',
     paramsSchema: {},
     annotations: {
