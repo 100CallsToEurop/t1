@@ -178,13 +178,14 @@ export class VideosMcp {
   @Tool({
     name: 'все видео',
     description: 'Получает все видео в БД',
+    paramsSchema: {},
     annotations: {
       destructiveHint: false,
       readOnlyHint: false,
       idempotentHint: true,
     },
   })
-  async getVideos(extra: RequestHandlerExtra): Promise<CallToolResult> {
+  async getVideos({}, extra: RequestHandlerExtra): Promise<CallToolResult> {
     const result = await this.videoQueryRepository.findAll();
     if (extra.signal.aborted) {
       return {
